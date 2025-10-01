@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myint Kyi - IT & Systems Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #1e40af 100%);
+        }
+        .tech-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #3b82f6;
+        }
+        .skill-bar {
+            transition: width 1s ease-in-out;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .typing-animation {
+            border-right: 2px solid #60a5fa;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { border-color: #60a5fa; }
+            51%, 100% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-blue-600">💻 John Smith</div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#skills" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Skills</a>
+                        <a href="#projects" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Projects</a>
+                        <a href="#experience" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Experience</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Projects</a>
+                <a href="#experience" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Experience</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg pt-20 pb-16 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        Hi, I'm <span class="text-blue-300">John Smith</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl mb-6 typing-animation" id="typing-text">
+                        IT & Systems Professional
+                    </h2>
+                    <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                        Passionate about building robust IT infrastructure, optimizing systems, and delivering innovative technology solutions that drive business success.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="scrollToSection('projects')" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                            View My Work
+                        </button>
+                        <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                            Get In Touch
+                        </button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="text-8xl mb-4">👨‍💻</div>
+                        <div class="grid grid-cols-2 gap-4 text-white">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-blue-300">5+</div>
+                                <div class="text-sm">Years Experience</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-blue-300">50+</div>
+                                <div class="text-sm">Projects Completed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-blue-300">15+</div>
+                                <div class="text-sm">Technologies</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-blue-300">99%</div>
+                                <div class="text-sm">Uptime Achieved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Dedicated IT professional with expertise in system administration, network infrastructure, and cloud technologies.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">My Expertise</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">🖥️</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">System Administration</h4>
+                                <p class="text-gray-600">Windows Server, Linux, Active Directory, Group Policy management</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">🌐</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Network Infrastructure</h4>
+                                <p class="text-gray-600">Cisco, routing, switching, firewalls, VPN configuration</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">☁️</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Cloud Technologies</h4>
+                                <p class="text-gray-600">AWS, Azure, cloud migration, hybrid infrastructure</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">🔒</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Cybersecurity</h4>
+                                <p class="text-gray-600">Security protocols, vulnerability assessment, compliance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Certifications & Education</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <span class="text-blue-600 mr-3">🏆</span>
+                            <span class="text-gray-700">CompTIA Security+ Certified</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-blue-600 mr-3">🏆</span>
+                            <span class="text-gray-700">Microsoft Certified: Azure Administrator</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-blue-600 mr-3">🏆</span>
+                            <span class="text-gray-700">Cisco Certified Network Associate (CCNA)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-blue-600 mr-3">🎓</span>
+                            <span class="text-gray-700">B.S. Information Technology</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-blue-200">
+                        <p class="text-gray-600 italic">
+                            "Committed to continuous learning and staying current with emerging technologies to deliver cutting-edge solutions."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+                <p class="text-xl text-gray-600">
+                    Proficient in a wide range of technologies and tools
+                </p>
+            </div>
+            
+            <!-- Skill Categories -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-lg tech-card">
+                    <div class="text-3xl mb-4">🖥️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Operating Systems</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Windows Server</span>
+                                <span class="text-sm text-gray-500">95%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full skill-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Linux (Ubuntu/CentOS)</span>
+                                <span class="text-sm text-gray-500">90%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">VMware vSphere</span>
+                                <span class="text-sm text-gray-500">85%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg tech-card">
+                    <div class="text-3xl mb-4">☁️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Cloud Platforms</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Microsoft Azure</span>
+                                <span class="text-sm text-gray-500">90%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Amazon AWS</span>
+                                <span class="text-sm text-gray-500">80%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full skill-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Google Cloud</span>
+                                <span class="text-sm text-gray-500">70%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full skill-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg tech-card">
+                    <div class="text-3xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Networking</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Cisco IOS</span>
+                                <span class="text-sm text-gray-500">85%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Firewall Management</span>
+                                <span class="text-sm text-gray-500">90%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">VPN Configuration</span>
+                                <span class="text-sm text-gray-500">88%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full skill-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Technology Stack</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="text-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <div class="text-2xl mb-2">🪟</div>
+                        <div class="text-sm font-medium">Windows</div>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <div class="text-2xl mb-2">🐧</div>
+                        <div class="text-sm font-medium">Linux</div>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <div class="text-2xl mb-2">☁️</div>
+                        <div class="text-sm font-medium">Azure</div>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <div class="text-2xl mb-2">🔶</div>
+                        <div class="text-sm font-medium">AWS</div>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <div class="text-2xl mb-2">🐳</div>
+                        <div class="text-sm font-medium">Docker</div>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <div class="text-2xl mb-2">⚙️</div>
+                        <div class="text-sm font-medium">PowerShell</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <p class="text-xl text-gray-600">
+                    Recent IT infrastructure and system implementation projects
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg tech-card">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6">
+                        <div class="text-white text-3xl mb-2">🏢</div>
+                        <h3 class="text-xl font-bold text-white">Enterprise Cloud Migration</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Led migration of 200+ servers from on-premises to Azure cloud, reducing infrastructure costs by 40% while improving scalability.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Azure</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">PowerShell</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Migration</span>
+                        </div>
+                        <button class="text-blue-600 font-semibold hover:text-blue-800 transition-colors">View Details →</button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg tech-card">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 p-6">
+                        <div class="text-white text-3xl mb-2">🔒</div>
+                        <h3 class="text-xl font-bold text-white">Security Infrastructure Overhaul</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Implemented comprehensive security framework including multi-factor authentication, endpoint protection, and network segmentation.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Security</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Firewall</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">MFA</span>
+                        </div>
+                        <button class="text-green-600 font-semibold hover:text-green-800 transition-colors">View Details →</button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg tech-card">
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6">
+                        <div class="text-white text-3xl mb-2">📊</div>
+                        <h3 class="text-xl font-bold text-white">Network Monitoring System</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Deployed enterprise-grade monitoring solution providing real-time visibility into network performance and automated alerting.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">Monitoring</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">SNMP</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">Analytics</span>
+                        </div>
+                        <button class="text-purple-600 font-semibold hover:text-purple-800 transition-colors">View Details →</button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg tech-card">
+                    <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-6">
+                        <div class="text-white text-3xl mb-2">🔄</div>
+                        <h3 class="text-xl font-bold text-white">Disaster Recovery Solution</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Designed and implemented comprehensive DR strategy with automated failover, achieving 99.9% uptime SLA.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">DR</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Backup</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Automation</span>
+                        </div>
+                        <button class="text-orange-600 font-semibold hover:text-orange-800 transition-colors">View Details →</button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg tech-card">
+                    <div class="bg-gradient-to-r from-red-500 to-red-600 p-6">
+                        <div class="text-white text-3xl mb-2">🌐</div>
+                        <h3 class="text-xl font-bold text-white">Network Infrastructure Upgrade</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Upgraded legacy network infrastructure to support 10Gbps backbone with improved redundancy and performance.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Cisco</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Switching</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Fiber</span>
+                        </div>
+                        <button class="text-red-600 font-semibold hover:text-red-800 transition-colors">View Details →</button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg tech-card">
+                    <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 p-6">
+                        <div class="text-white text-3xl mb-2">🤖</div>
+                        <h3 class="text-xl font-bold text-white">IT Automation Framework</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Developed PowerShell-based automation framework reducing manual tasks by 70% and improving deployment consistency.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">PowerShell</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">Automation</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">Scripting</span>
+                        </div>
+                        <button class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">View Details →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+                <p class="text-xl text-gray-600">
+                    Career progression in IT and systems administration
+                </p>
+            </div>
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-blue-500">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Senior Systems Administrator</h3>
+                            <p class="text-blue-600 font-semibold">TechCorp Solutions</p>
+                        </div>
+                        <div class="text-gray-500 font-medium">2021 - Present</div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Lead infrastructure team managing 500+ servers across hybrid cloud environment</li>
+                        <li>• Implemented automated deployment pipelines reducing deployment time by 60%</li>
+                        <li>• Managed $2M annual infrastructure budget and vendor relationships</li>
+                        <li>• Achieved 99.95% uptime SLA through proactive monitoring and maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-green-500">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">IT Systems Specialist</h3>
+                            <p class="text-green-600 font-semibold">Global Enterprises Inc.</p>
+                        </div>
+                        <div class="text-gray-500 font-medium">2019 - 2021</div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Administered Windows Server environment supporting 1000+ users</li>
+                        <li>• Implemented Active Directory security policies and group management</li>
+                        <li>• Led migration from Exchange on-premises to Office 365</li>
+                        <li>• Provided tier 3 technical support and mentored junior staff</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-purple-500">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Network Administrator</h3>
+                            <p class="text-purple-600 font-semibold">DataFlow Networks</p>
+                        </div>
+                        <div class="text-gray-500 font-medium">2017 - 2019</div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Managed Cisco-based network infrastructure across 5 office locations</li>
+                        <li>• Configured and maintained firewalls, VPNs, and wireless networks</li>
+                        <li>• Implemented network monitoring and performance optimization</li>
+                        <li>• Reduced network downtime by 40% through proactive maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Let's Connect</h2>
+                <p class="text-xl text-gray-600">
+                    Ready to discuss your IT infrastructure needs? I'd love to help!
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <span class="text-blue-600 mr-4 text-xl">📧</span>
+                            <div>
+                                <div class="font-semibold text-gray-900">Email</div>
+                                <div class="text-gray-600">john.smith@email.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-blue-600 mr-4 text-xl">📱</span>
+                            <div>
+                                <div class="font-semibold text-gray-900">Phone</div>
+                                <div class="text-gray-600">(555) 123-4567</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-blue-600 mr-4 text-xl">💼</span>
+                            <div>
+                                <div class="font-semibold text-gray-900">LinkedIn</div>
+                                <div class="text-gray-600">linkedin.com/in/johnsmith-it</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-blue-600 mr-4 text-xl">📍</span>
+                            <div>
+                                <div class="font-semibold text-gray-900">Location</div>
+                                <div class="text-gray-600">San Francisco, CA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <select id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select a topic</option>
+                                <option value="consultation">IT Consultation</option>
+                                <option value="project">Project Collaboration</option>
+                                <option value="employment">Employment Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="form-message" class="mt-4 text-center hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-2xl font-bold text-blue-400 mb-4">💻 John Smith</div>
+                    <p class="text-gray-400 mb-4">IT & Systems Professional dedicated to delivering robust, scalable technology solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">📧</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">💼</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">🐙</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Specializations</h4>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400">Cloud Migration</span></li>
+                        <li><span class="text-gray-400">Network Security</span></li>
+                        <li><span class="text-gray-400">System Administration</span></li>
+                        <li><span class="text-gray-400">Infrastructure Automation</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 John Smith. Professional IT Portfolio built with Canva Code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            const navHeight = 64;
+            const elementPosition = element.offsetTop - navHeight;
+            
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation link handlers
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Typing animation
+        const typingText = document.getElementById('typing-text');
+        const roles = ['IT & Systems Professional', 'Cloud Infrastructure Expert', 'Network Administrator', 'Security Specialist'];
+        let currentRole = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+
+        function typeRole() {
+            const current = roles[currentRole];
+            
+            if (isDeleting) {
+                typingText.textContent = current.substring(0, currentChar - 1);
+                currentChar--;
+            } else {
+                typingText.textContent = current.substring(0, currentChar + 1);
+                currentChar++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && currentChar === current.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && currentChar === 0) {
+                isDeleting = false;
+                currentRole = (currentRole + 1) % roles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeRole, typeSpeed);
+        }
+
+        // Start typing animation
+        setTimeout(typeRole, 1000);
+
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formMessage = document.getElementById('form-message');
+            const name = document.getElementById('name').value;
+            
+            formMessage.className = 'mt-4 text-center text-green-600';
+            formMessage.textContent = `Thank you, ${name}! I'll get back to you within 24 hours.`;
+            formMessage.classList.remove('hidden');
+            
+            this.reset();
+            
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                }
+            });
+        }
+
+        // Scroll event listener
+        let skillsAnimated = false;
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+
+            // Animate skills section once
+            if (!skillsAnimated) {
+                const skillsSection = document.getElementById('skills');
+                const rect = skillsSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    animateSkillBars();
+                    skillsAnimated = true;
+                }
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9878eae837c3823d',t:'MTc1OTI4OTgwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
